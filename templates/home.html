@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+<h2 class="mb-4">Vídeos disponibles</h2>
+{% if videos %}
+<ul class="list-group">
+    {% for video in videos %}
+    <li class="list-group-item">
+        <a href="/watch/{{ video.name }}">{{ video.name }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>
+    No hay vídeos disponibles. Comienza subiendo uno <a href="/upload">aquí</a>.
+</p>
+{% endif %} {% endblock %}
